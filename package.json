@@ -10,8 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/camerawalrond/dependency_app.git"
   },
+<<<<<<< HEAD
   "keywords": [],
   "author": "",
+=======
+  "author": "Red Lipped Bat Fish",
+>>>>>>> dev
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/camerawalrond/dependency_app/issues"
