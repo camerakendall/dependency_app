@@ -1,3 +1,3 @@
-const pool = require('./database.js'); //requires our database (which is exported as pool)
+const pool = require('../database/database.js'); //requires our database (which is exported as pool)
 
 //module.exports = {}
