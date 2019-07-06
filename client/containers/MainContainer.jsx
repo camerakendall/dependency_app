@@ -1,20 +1,29 @@
 // container that holds all the components
 
-import react from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
+import Questions from '../components/Question.jsx';
 
-const mapStateToProps = ({
-    // to be added with data
-})
+// const mapStateToProps = ({
+//     // to be added with data
+// })
 
-const mapDispatchToProps = dispatch => ({
-    // depends on what we are going to dispatch to the reducers
-})
+// const mapDispatchToProps = dispatch => ({
+//     // depends on what we are going to dispatch to the reducers
+// })
 
 const MainContainer = (props) => {
-    // render some divs here
-    // any components that we want to display
+    return(
+        <div className="container">
+            {
+            /* //add heading or Label
+            // render some divs here
+            // any components that we want to display */}
+            <h1>TEXT</h1>
+            <Questions />
+        </div>
+    )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
+export default MainContainer;

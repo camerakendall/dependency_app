@@ -1,13 +1,14 @@
 // main App wrapper
 
-import react from 'react';
-import Wrapper from '.containers/MainContainer';
+import React from 'react';
+import Wrapper from './containers/MainContainer.jsx';
 
 const App = () => {
-    <div id='App'>
-        <Wrapper />
-    </div>
-
+    return(
+        <div id='App'>
+            <Wrapper />
+        </div>
+    )
 }
 
 export default App;

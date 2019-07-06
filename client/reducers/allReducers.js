@@ -3,6 +3,30 @@
 
 import * as types from '../constants/actionTypes';
 
+const initialState = {
+    questions: ['a', 'b', 'c', 'd'],
+    answers: []
+}
+
+const allReducers = (state = initialState, action) => {
+    switch (action.type) {
+        case types.NEXT_BUTTON: //return something 
+        {
+
+
+        }
+
+        case types.SUBMIT_BUTTON: //return something
+        {
+
+
+
+        }
+        default:
+            return state;
+    }
+}
+
 
 
 
