@@ -1,11 +1,11 @@
 //This is our Question Component
-import react from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/actions';
-import Question from './Question';
+import Question from './Question.jsx';
 
-const mapStateToProps = ({ applicationState }) => ({
+const mapStateToProps = ( applicationState ) => ({
     questions: applicationState.questions,
     answers: applicationState.answers
 
@@ -13,7 +13,7 @@ const mapStateToProps = ({ applicationState }) => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-const questionMaker = (question, index, props) => (
+const questionMaker = (question, index) => (
     <Question
         {...question}
         key={index}

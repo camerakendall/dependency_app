@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 const Question = ({
     index,
@@ -9,3 +9,5 @@ const Question = ({
             {questions}
         </div>
     )
+
+    export default Question;

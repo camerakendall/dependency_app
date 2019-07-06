@@ -3,17 +3,19 @@ const path = require('path');
 module.exports ={
   //First we specify our entry point
   //The entry point is where we insert our <App /> component into the html root
-  entry: './client/index.js',
+  entry: path.join(__dirname,'/client/index.js'),
   //create webpack dev server
   devServer: {
-    publicPath: '/build/',
+    publicPath: '/build',
+    port: 8080, 
+    hot: true,
     proxy: {
         '/api': 'http://localhost:3000'
     }
   },
   output:{
-    path:path.join(__dirname, '/build/'),
-    filename: 'bundle.js,'
+    path:path.join(__dirname, '/build'),
+    filename: 'bundle.js'
   },
   mode: process.env.NODE_ENV,
   module: {
