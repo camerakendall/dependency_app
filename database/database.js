@@ -1,5 +1,4 @@
 const { Pool } = require('pg'); //replaces the outdated pg.connect
-//do we need a client?
 
 //Every field of the config object is entirely optional. The config passed to the pool is also passed to every client instance within the pool when the pool creates that client.
 const pool = new Pool({ //this creates a pool 
