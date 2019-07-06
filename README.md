@@ -1,4 +1,5 @@
 # dependency_app
 Scratch project
 
-We are creating a dev tool, yay!
+//Dependency Indicator
+//Team: Camera, Dillon, Kajol, Amanda, Kwadwo
