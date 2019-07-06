@@ -18,6 +18,7 @@ import store from './store';
 
 render(
   <Provider store={store}>
+      {/* need to create App */}
     <App />
   </Provider>,
   document.getElementById('root'),
