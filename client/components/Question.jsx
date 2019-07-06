@@ -10,4 +10,4 @@ const Question = ({
         </div>
     )
 
-    export default Question;
+export default Question;

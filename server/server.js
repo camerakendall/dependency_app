@@ -17,7 +17,6 @@ app.use((req, res, next) => {
 //need /build
 //need get request for / route on 3000
 //process variables (if production get /build. if development )
-console.log('hello')
 //if(process.env.NODE_ENV === 'production') { }
 
 //for when in build

@@ -15,13 +15,14 @@ import Questions from '../components/Question.jsx';
 
 const MainContainer = (props) => {
     return(
-    <div className="container">
-        {
-         /* //add heading or Label
-        // render some divs here
-        // any components that we want to display */}
-        <Questions />
-    </div>
+        <div className="container">
+            {
+            /* //add heading or Label
+            // render some divs here
+            // any components that we want to display */}
+            <h1>TEXT</h1>
+            <Questions />
+        </div>
     )
 }
 
