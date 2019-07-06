@@ -15,7 +15,8 @@ const mapDispatchToProps = dispatch => ({
 
 const MainContainer = (props) => {
     <div className="container">
-        {/* //add heading or Label
+        {
+         /* //add heading or Label
         // render some divs here
         // any components that we want to display */}
         <Questions />

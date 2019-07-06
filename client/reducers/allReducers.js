@@ -4,7 +4,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-    question: [],
+    questions: [],
     answers: []
 }
 
