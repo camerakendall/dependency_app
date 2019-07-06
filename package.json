@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/camerawalrond/dependency_app/issues"
   },
-  "homepage": "https://github.com/camerawalrond/dependency_app#readme"
+  "homepage": "https://github.com/camerawalrond/dependency_app#readme",
+  "dependencies": {
+    "webpack": "^4.35.2"
+  }
 }
