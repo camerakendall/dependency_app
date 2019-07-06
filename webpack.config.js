@@ -22,7 +22,7 @@ module.exports ={
       //rule1 for javascript files that use es6 and jsx
       {
         //regex to check for any files with the extension js or jsx
-        test: /\.jsx?/,
+        test: /\.(js|jsx)$/,
         //exclude the unessecary node modules folder upon bundling
         exclude:/(node_modules)/,
         use: {
