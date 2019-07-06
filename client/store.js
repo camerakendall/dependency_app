@@ -15,6 +15,6 @@ const store = createStore(
 );
 
 // TBD with what our actions/reducers/stateful components will be called
-store.dispatch(loadMarkets());
+// store.dispatch(loadMarkets());
 
 export default store;
