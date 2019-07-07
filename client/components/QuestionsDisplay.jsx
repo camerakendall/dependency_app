@@ -7,19 +7,20 @@ import Question from './Question.jsx';
 
 const mapStateToProps = ({ applicationState }) => ({
     questions: applicationState.questions,
-    answers: applicationState.answers
+    answers: applicationState.answers,
+    index: applicationState.index
 
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-const questionMaker = (question, index) => (
-    <Question
-        question = {question}
-        key={index}
-        index={index}
-    />
-);
+// const questionMaker = (question, index) => (
+//     <Question
+//         question = {question}
+//         key={index}
+//         index={index}
+//     />
+// );
 
 // console.log(props.questions);
 
@@ -27,7 +28,14 @@ const QuestionsDisplay = props => (
     <div className="questionField">
         {/* <h2>{props.questions}</h2> */}
         <h2> Display Questions </h2>
-        {props.questions.map((question, index) => questionMaker(question, index, props))}
+        {
+            props.index < props.questions.length &&
+            <Question 
+                question = {props.questions[props.index]}
+                key={props.index}
+                index={props.index}
+            />
+        }
     </div>
 );
 

@@ -4,6 +4,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
+    index: 0,
     questions: ['a', 'b', 'c', 'd'],
     answers: [
          'Webpack', 'Node', 'Express', 'Nodemon', 'Request', 'Body-Parser', 'node-postgres', 'Mongo', 'Mongoose', 'Babel', 'React', 'CSS', 'Redux',
@@ -12,13 +13,13 @@ const initialState = {
 
 const allReducers = (state = initialState, action) => {
     let questions = state.questions.slice()
+    // state = Object.assign({}, state);
     switch (action.type) {
         case types.NEXT_BUTTON: //return something 
-            questions.push('Dillon');
-            console.log(questions);
+            console.log(state.index);
             return {
                 ...state,
-                questions
+                index: state.index + 1
             }
         case types.SUBMIT_BUTTON: //return something
             return {
