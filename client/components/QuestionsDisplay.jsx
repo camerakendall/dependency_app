@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../actions/actions';
 import Question from './Question.jsx';
 
-const mapStateToProps = ( applicationState ) => ({
+const mapStateToProps = ({ applicationState }) => ({
     questions: applicationState.questions,
     answers: applicationState.answers
 
@@ -22,10 +22,13 @@ const questionMaker = (question, index) => (
     />
 );
 
+// console.log(props.questions);
+
 const QuestionsDisplay = props => (
     <div className="questionField">
+        <h2>{props.questions}</h2>
         <h2> Display Questions </h2>
-        {questions.map((question, index) => questionMaker(question, index, props))}
+        {/* {props.questions.map((question, index) => questionMaker(question, index, props))} */}
     </div>
 );
 
