@@ -75,7 +75,7 @@ const ourList = [
 
 ]
 
-export default ourList;
+module.exports = ourList;
 
 
 
