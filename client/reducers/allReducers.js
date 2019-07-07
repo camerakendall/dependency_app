@@ -4,6 +4,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
+    // to be used in redux to determine if the fetch is actually going out
     isFetching: false,
     codeToDisplay: null,
     index: 0,
@@ -21,7 +22,7 @@ const allReducers = (state = initialState, action) => {
                 ...state,
                 index: state.index + 1
             }
-        case types.REQUEST_DATA: //return something
+        case types.REQUEST_DATA:
             return Object.assign({}, state, {
                 isFetching: true,
             })
