@@ -9,19 +9,20 @@ const initialState = {
 }
 
 const allReducers = (state = initialState, action) => {
+    let questions = state.questions.slice()
     switch (action.type) {
         case types.NEXT_BUTTON: //return something 
-        {
-
-
-        }
-
+            questions.push('Dillon');
+            console.log(questions);
+            return {
+                ...state,
+                questions
+            }
         case types.SUBMIT_BUTTON: //return something
-        {
+            return {
 
 
-
-        }
+            }
         default:
             return state;
     }
