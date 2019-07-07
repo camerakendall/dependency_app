@@ -5,7 +5,9 @@ import * as types from '../constants/actionTypes';
 
 const initialState = {
     questions: ['a', 'b', 'c', 'd'],
-    answers: []
+    answers: [
+         'Webpack', 'Node', 'Express', 'Nodemon', 'Request', 'Body-Parser', 'node-postgres', 'Mongo', 'Mongoose', 'Babel', 'React', 'CSS', 'Redux',
+    ]
 }
 
 const allReducers = (state = initialState, action) => {
