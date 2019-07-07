@@ -15,10 +15,9 @@ const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
 const questionMaker = (question, index) => (
     <Question
-        {...question}
+        question = {question}
         key={index}
         index={index}
-    // we will need to add action for our NEXT_BUTTON
     />
 );
 
@@ -26,9 +25,9 @@ const questionMaker = (question, index) => (
 
 const QuestionsDisplay = props => (
     <div className="questionField">
-        <h2>{props.questions}</h2>
+        {/* <h2>{props.questions}</h2> */}
         <h2> Display Questions </h2>
-        {/* {props.questions.map((question, index) => questionMaker(question, index, props))} */}
+        {props.questions.map((question, index) => questionMaker(question, index, props))}
     </div>
 );
 
