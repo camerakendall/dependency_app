@@ -4,6 +4,9 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
+    // to be used in redux to determine if the fetch is actually going out
+    isFetching: false,
+    codeToDisplay: null,
     index: 0,
     questions: ['a', 'b', 'c', 'd'],
     answers: [
@@ -13,19 +16,17 @@ const initialState = {
 
 const allReducers = (state = initialState, action) => {
     let questions = state.questions.slice()
-    // state = Object.assign({}, state);
     switch (action.type) {
         case types.NEXT_BUTTON: //return something 
-            console.log(state.index);
             return {
                 ...state,
                 index: state.index + 1
             }
-        case types.SUBMIT_BUTTON: //return something
-            return {
-
-
-            }
+        case types.REQUEST_DATA:
+            return Object.assign({}, state, {
+                isFetching: true,
+            })
+        
         default:
             return state;
     }

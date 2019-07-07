@@ -14,24 +14,14 @@ const mapStateToProps = ({ applicationState }) => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-// const questionMaker = (question, index) => (
-//     <Question
-//         question = {question}
-//         key={index}
-//         index={index}
-//     />
-// );
-
-// console.log(props.questions);
 
 const QuestionsDisplay = props => (
     <div className="questionField">
-        {/* <h2>{props.questions}</h2> */}
         <h2> Display Questions </h2>
         {
             props.index < props.questions.length &&
-            <Question 
-                question = {props.questions[props.index]}
+            <Question
+                question={props.questions[props.index]}
                 key={props.index}
                 index={props.index}
             />
