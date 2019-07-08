@@ -1,0 +1,35 @@
+.command-container{
+  font-family: Helvetica, sans-serif;
+}
+.resource-container{
+  font-family: Helvetica, sans-serif;
+  margin-top: 20px;
+}
+.code-container{
+  background-color: rgba(0,0,0,0.9);
+  padding-top: 10px;
+  margin-top: 20px;
+  height:90px;
+}
+h4{
+  font-weight: 300;
+}
+h2{
+  font-family: helvetica;
+}
+.results-page{
+  animation:fadein 0.3s;
+}
+.install{
+  color:white;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+@keyframes fadein{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}

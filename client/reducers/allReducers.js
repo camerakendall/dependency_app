@@ -5,6 +5,7 @@ import * as types from '../constants/actionTypes';
 // import ourQuestions from '../ourQuestions.js';// 
 
 const initialState = {
+    isItTimeForResults:false,
     index: 0,
     questions: [
         "Will you be using a Mac Operating system?",
@@ -32,6 +33,7 @@ const initialState = {
 const allReducers = (state = initialState, action) => {
     let questions = state.questions.slice()
     let index = state.index
+    let isItTimeForResults = state.isItTimeForResults
     // state = Object.assign({}, state);
     switch (action.type) {
         case types.NEXT_BUTTON: //return something 
@@ -44,9 +46,11 @@ const allReducers = (state = initialState, action) => {
                 index
             }
         case types.SUBMIT_BUTTON: //return something
+            isItTimeForResults = true
+            console.log('true')
             return {
-
-
+                ...state,
+                isItTimeForResults
             }
         default:
             return state;
