@@ -9,12 +9,13 @@ const ourList = [
         technology: 'Webpack',
         dependencies: ['webpack', 'webpack-cli'],
         docs: ['https://www.npmjs.com/package/webpack', 'https://www.npmjs.com/package/webpack-cli'],
+        notes: ['']
     },
     {
         technology: 'Node',
         dependencies: [''],
         docs: ['https://www.dyclassroom.com/howto-mac/how-to-install-nodejs-and-npm-on-mac-using-homebrew'],
-        notes: ['Don\'t have node? May we suggest installing Homebrew and using it to install node?']
+        notes: ['Dont have node? May we suggest installing Homebrew and using it to install node?']
     },
     {
         technology: 'Express',
@@ -60,31 +61,30 @@ const ourList = [
     },
     {
         technology: 'Babel',
-        dependencies: ['@babel/core, babel-loader, @babel/preset-env'],
+        dependencies: ['@babel/core', 'babel-loader', '@babel/preset-env'],
         docs: ['https://www.npmjs.com/package/@babel/core, https://github.com/babel/babel-loader, https://www.npmjs.com/package/@babel/preset-env'],
         notes: ['']
     },
     {
         technology: 'React',
-        dependencies: ['@babel/preset-react, react,prop-types'],
+        dependencies: ['@babel/preset-react', 'react', 'prop-types'],
         docs: ['https://www.npmjs.com/package/@babel/preset-react, https://www.npmjs.com/package/react, https://www.npmjs.com/package/prop-types'],
         notes: ['']
     },
     {
         technology: 'CSS',
-        dependencies: ['style-loader, css-loader'],
+        dependencies: ['style-loader', 'css-loader'],
         docs: ['https://www.npmjs.com/package/style-loader, https://github.com/webpack-contrib/css-loader'],
         notes: ['']
     },
     {
         technology: 'Redux',
-        dependencies: ['react-redux, react-dom, redux, redux-devtool-extensions, redux-thunk'],
+        dependencies: ['react-redux', 'react-dom', 'redux', 'redux-devtools-extension', 'redux-thunk'],
         docs: ['https://www.npmjs.com/package/react-redux, https://www.npmjs.com/package/react-dom, https://www.npmjs.com/package/redux, https://www.npmjs.com/package/redux-devtools-extension, https://www.npmjs.com/package/redux-thunk'],
         notes: ['']
     },
 ]
 
-// export default ourList;
 module.exports = ourList;
 
 

@@ -31,7 +31,6 @@ class ResultsPage extends React.Component {
         console.log("testing", elem)
         let deps = elem.dependencies;
         let docs = elem.docs;
-
         let notes = elem.notes;
         console.log(deps, docs, notes)
         deps.forEach(dep => {
