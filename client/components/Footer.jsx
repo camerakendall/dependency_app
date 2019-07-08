@@ -24,7 +24,7 @@ class Footer extends React.Component{
     return(
       <footer className={this.props.index >= 15 ? "show-footer" : "hide-footer"}>
        <div className="button-arrow">
-          <div className="submit-button" onClick={()=>{this.props.submitButton(); this.props.fetchData()}}> Get Result</div>
+          <div className="submit-button" onClick={()=>{this.props.submitButton(); this.props.fetchData()}}>Submit</div>
           <i className="fas fa-arrow-right"></i>
         </div>
       </footer>

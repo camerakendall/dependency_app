@@ -10,9 +10,9 @@ class ResultsPage extends React.Component{
         Your Results:
         <section className="command-container">
           <h2>Your install command</h2>
-          <h4>Run this command in your terminal from your application's root directory.</h4>
+          <h4>Run <code>npm init</code>, then run this command in your terminal from your application's root directory.</h4>
           <div className="code-container">
-            <p className="install">npm install react redux express body-parser mongodb pg pg-admin webpack css-loader</p>
+            <p className="install">npm install react redux express body-parser mongodb pg webpack css-loader</p>
           </div>
         </section>
          
