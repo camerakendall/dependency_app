@@ -22,19 +22,23 @@ const controller = {
     // makes one singular query so we use Pool.query instead of Pool.connect's client.query
     // useful link for understanding queries ----> https://node-postgres.com/features/queries
     getDeps: (req, res) => {
+        // console.log("req query????", req.query.query)
+        const {query} = req.query
         //We know that the req.body will always be safe because we control how what goes into it
-        const listOfTech = (req.body); //ex ["mongo", "mongoose", etc...]
+        const listOfTech = query; //ex ["mongo", "mongoose", etc...]
         // ^ should always have length >= 1
         //   even if questions are not mandatory (in order not to overwhelm user if they're not sure about something)
         //   a place should be in check on the front end to avoid making an uncessary request because
         //   client -> server -> controller -> db
-
+        // console.log("list of tech", listOfTech)
         //strinigify and replace double quotes and [ ] appropriately for SQL syntax
-        const queryTech = JSON.stringify(listOfTech).replace(/["\[\]]/g, (matched) => {
+        console.log("listof tech???", listOfTech)
+        const queryTech = (listOfTech).replace(/["\[\]]/g, (matched) => {
             if (matched === '"') {return "'"} 
             if (matched === '[') {return "("} 
             if (matched === ']') {return ")"} 
         }); 
+        console.log("query tech", queryTech)
         const fullQuery = `SELECT * FROM dependency WHERE technology IN ${queryTech};`; //DON'T FORGET THIS MOFO ;
         pool.query(fullQuery, (err, results) => {
             if (err) {
@@ -43,6 +47,7 @@ const controller = {
             }
             else {
                 // seeder.dropDB();
+                console.log(results.rows)
                 res.status(200).send(results.rows) //returns an array of results
             }
         })
