@@ -35,3 +35,7 @@ export const fetchData = () => {
             )
     })
 }
+
+export const submitButton = () => ({
+    type: types.SUBMIT_BUTTON,
+})

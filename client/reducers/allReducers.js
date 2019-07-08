@@ -8,6 +8,7 @@ const initialState = {
     // to be used in redux to determine if the fetch is actually going out
     isFetching: false,
     codeToDisplay: null,
+    isItTimeForResults:false,
     index: 0,
     questions: [
         "Will you be using a Mac Operating system?",
@@ -35,6 +36,7 @@ const initialState = {
 const allReducers = (state = initialState, action) => {
     let questions = state.questions.slice()
     let index = state.index
+    let isItTimeForResults = state.isItTimeForResults
     // state = Object.assign({}, state);
     switch (action.type) {
         case types.NEXT_BUTTON: //return something 
@@ -57,6 +59,13 @@ const allReducers = (state = initialState, action) => {
             stateClone.codeToDisplay = data;
             return {
                 stateClone,
+            }
+        case types.SUBMIT_BUTTON: //return something
+            isItTimeForResults = true
+            console.log('true')
+            return {
+                ...state,
+                isItTimeForResults
             }
 
         default:
