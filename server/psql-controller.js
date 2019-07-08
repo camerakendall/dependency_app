@@ -41,10 +41,6 @@ const controller = {
 
         const fullQuery = `SELECT * FROM dependency WHERE technology IN ${queryTech};`; //DON'T FORGET THIS MOFO ;
         pool.query(fullQuery, (err, results) => {
-            // let dependenciesArr = [];
-            // results.rows.forEach(element => {
-            //     dependenciesArr.push(element.dependencies)
-            
             if (err) {
                 console.log("Error querying db for dependencies", err);
                 res.status(400).send("Sorry, error querying for your dependencies!")

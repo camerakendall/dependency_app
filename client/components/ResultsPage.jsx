@@ -33,9 +33,11 @@ class ResultsPage extends React.Component {
         let docs = elem.docs;
         let notes = elem.notes;
         console.log(deps, docs, notes)
-        deps.forEach(dep => {
-          installLine += `${dep} `;
-        })
+        if (deps) {
+          deps.forEach(dep => {
+            installLine += `${dep} `;
+          })
+        }
         if (docs) {
           console.log("yes there are docs")
           docs.forEach(doc => {
