@@ -20,7 +20,6 @@ const mapStateToProps = ({ applicationState }) => ({
     questions: applicationState.questions,
     answers: applicationState.answers,
     index: applicationState.index
-
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);

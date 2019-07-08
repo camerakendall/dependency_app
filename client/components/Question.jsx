@@ -1,6 +1,6 @@
 import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
-
+import styled, { keyframes } from 'styled-components';
+import '../styles/Question.css'
 const Gradient = keyframes`
 0%, 100% {
     background-position: 0% 50%
@@ -9,16 +9,15 @@ const Gradient = keyframes`
     background-position: 100% 50%
 }
 `
-
 const QuestionWrapper = styled.div`
 display: flex;
 flex-flow: column wrap;
 justify-content: center;
 align-items: center;
-height: 300px;
+height: 350px;
 width: 600px;
-background-size: 400% 400%;
 background: linear-gradient(45deg, darkblue, blue, teal, turquoise);
+background-size: 400% 400%;
 animation: ${Gradient} 10s linear infinite;
 `
 const Quest = styled.h1`
@@ -32,6 +31,7 @@ font-weight: 300;
 const Options = styled.div`
 display: flex;
 justify-content: center;
+padding-top:20px;
 `
 const Option = styled.div`
 width: 150px;
@@ -40,7 +40,7 @@ text-align: center;
 `
 const Label = styled.label`
 display: block;
-color: rgba(0,0,0,0.8);
+color: rgba(255,255,255,0.9);
 font-family:helvetica;
 font-size: 30px;
 `
@@ -53,16 +53,18 @@ const Question = ({
         <QuestionWrapper idx={index}>
         
             <Quest>{question}</Quest>
+            { index < 15 ?
             <Options>
-                <Option>
+              <Option>
                     <Label htmlFor="Yes">Yes</Label>
                     <input type='radio' name='radio' id='Yes'/>
                 </Option>
                 <Option>
                     <Label htmlFor="No">No</Label>
                     <input type='radio' name='radio' id='No'/>
-                </Option>
+                </Option> 
             </Options>
+            : <div></div>}
         </QuestionWrapper>
     )
 

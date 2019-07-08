@@ -35,9 +35,10 @@ cursor:pointer;
 padding-bottom:10px;
 `
 
-const mapStateToProps = (applicationState) => ({
+const mapStateToProps = ({ applicationState }) => ({
     questions: applicationState.questions,
     answers: applicationState.answers,
+    index: applicationState.index
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
@@ -48,7 +49,7 @@ const MainContainer = (props) => (
         <Main className="container">
             <QuestionsDisplay />
             <Buttons>
-                <NextButton id={'button'} onClick={() => {props.nextButton()}}>Next</NextButton>
+               {props.index < props.questions.length - 1 ? <NextButton id={'button'} onClick={() => {props.nextButton()}}>Next</NextButton> : <div></div>}
             {/* we need submit button here, perhaps in div */}
             </Buttons>
         </Main>
