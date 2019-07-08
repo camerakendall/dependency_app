@@ -34,9 +34,11 @@ function createDB(){
 function arrConverter(dbArr){
   let str ='{';
   dbArr.forEach((element)=>{
+    // console.log(`"${element}"`, 'this is element')
     str += `"${element}",`
   })
   str = str.slice(0, str.length - 1) + '}'
+  // console.log(str, 'this is str')
     return(str)
 }
 //-------------------------------------------------------------
@@ -69,7 +71,7 @@ function seedDB(){
   //-----------------------------------------    
   })
   insertQuery = `${insertQuery.slice(0, insertQuery.length - 2)};`;
-  console.log(insertQuery)
+  console.log("insertQuery", insertQuery)
 
   //--------------------------------------------------------------------------------------------------
   //FINALLY we insert our data by using our Big ass raw sql query
