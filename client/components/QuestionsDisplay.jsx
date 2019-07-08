@@ -19,8 +19,8 @@ padding-bottom: 10px;
 const mapStateToProps = ({ applicationState }) => ({
     questions: applicationState.questions,
     answers: applicationState.answers,
-    index: applicationState.index
-
+    index: applicationState.index,
+    answers2: applicationState.answers2
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
