@@ -45,7 +45,6 @@ const allReducers = (state = initialState, action) => {
             }
         case types.SUBMIT_BUTTON: //return something
             isItTimeForResults = true
-            console.log('true')
             return {
                 ...state,
                 isItTimeForResults

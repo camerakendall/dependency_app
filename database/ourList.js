@@ -5,7 +5,6 @@
 //  notes text [] // text arr
 
 const ourList = [
-
     {
         technology: 'Webpack',
         dependencies: ['webpack', 'webpack-cli'],
@@ -88,7 +87,6 @@ const ourList = [
 
 // export default ourList;
 module.exports = ourList;
-
 
 
 
