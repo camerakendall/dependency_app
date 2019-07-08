@@ -31,7 +31,10 @@ export const fetchData = (param) => {
             // body: JSON.stringify(fakeData),
         })
             .then(response => response.json())
-            .then(data => console.log("DATA",(data)),
+            .then(data => {
+                console.log("DATA", data)
+                dispatch(receiveData(data))
+            },
                 // error => console.log(error, 'This is error')
             )
     })
