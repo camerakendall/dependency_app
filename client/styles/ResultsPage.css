@@ -19,6 +19,7 @@ h2{
 }
 .results-page{
   animation:fadein 0.3s;
+  font-family: helvetica;
 }
 .install{
   color:white;
