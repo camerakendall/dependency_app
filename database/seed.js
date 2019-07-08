@@ -29,6 +29,18 @@ function createDB(){
     }
   })
 }
+//-------------------------------------------------------------
+
+function arrConverter(dbArr){
+  let str ='{';
+  dbArr.forEach((element)=>{
+    str += `"${element}",`
+  })
+  str = str.slice(0, str.length - 1) + '}'
+    return(str)
+}
+//-------------------------------------------------------------
+
 function seedDB(){
   // const dropped = await dropDB();
   // console.log(dropped)
@@ -45,9 +57,12 @@ function seedDB(){
   list.forEach((listItem) => {
   //2) 🏃for each item in our seed array, extract the keys.(Using Destructuring)🏃
   const { technology, dependencies, docs, notes } = listItem;
+  const convertedDependencies = arrConverter(dependencies)
+  const convertedDocs = arrConverter(docs)
+  const convertedNotes = arrConverter(notes)
   //3) Now we can concatenate the values (of the Keys we've just extracted) with our query string to make... 
   // insertQuery += `(DEFAULT, '${technology}', '[${dependencies}]', '[${docs}]', '[${notes}]'), ` 
-  insertQuery += `(DEFAULT, '${technology}', '{"hey", "bro"}'), ` 
+  insertQuery += `(DEFAULT, '${technology}', '${convertedDependencies}', '${convertedDocs}','${convertedNotes}'), ` 
   // A BIG ASS RAW SQL QUERY STRING called 'insertQuery'
   // -----------------------------------------
   //But now that we've finished concatenating, instead of a comma we want to end our SQL query with a semicolon.
