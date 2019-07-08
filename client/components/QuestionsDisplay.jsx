@@ -4,6 +4,17 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/actions';
 import Question from './Question.jsx';
+import styled from 'styled-components';
+
+const Main = styled.div`
+height: fit-content;
+width: fit-content;
+display: flex;
+flex-flow: column wrap;
+justify-content: center;
+align-items: center;
+padding-bottom: 10px;
+`
 
 const mapStateToProps = ({ applicationState }) => ({
     questions: applicationState.questions,
@@ -14,29 +25,17 @@ const mapStateToProps = ({ applicationState }) => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-// const questionMaker = (question, index) => (
-//     <Question
-//         question = {question}
-//         key={index}
-//         index={index}
-//     />
-// );
-
-// console.log(props.questions);
-
 const QuestionsDisplay = props => (
-    <div className="questionField">
-        {/* <h2>{props.questions}</h2> */}
-        <h2> Display Questions </h2>
+    <Main className="questionField">
         {
             props.index < props.questions.length &&
-            <Question 
-                question = {props.questions[props.index]}
+            <Question
+                question={props.questions[props.index]}
                 key={props.index}
                 index={props.index}
             />
         }
-    </div>
+    </Main>
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionsDisplay);

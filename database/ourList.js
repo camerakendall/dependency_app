@@ -1,4 +1,4 @@
-// _id SERIALKEY 
+// _id SERIALKEY  //DEFAULT
 // {technology VARCHAR //string
 //  dependencies text [] //text array
 //  docs text [] //text array

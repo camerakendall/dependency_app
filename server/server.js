@@ -30,6 +30,10 @@ app.use('/build', express.static(path.join(__dirname, '../build')))
 
 // res.sendFile(path.join(__dirname, '../index.html'))
 // )
+// app.get('/', (req, res) =>{
+
+//    res.sendFile(path.join(__dirname, '../index.html'))
+// })
 
 //! Header error with this code
 app.get('/', (req, res, databaseSeed) =>{
@@ -49,6 +53,8 @@ app.get('/', (req, res, databaseSeed) =>{
 
 //Need this for querying after hitting submit button.
 // app.get('/result' , controller.getDeps)
+app.get('/result' , controller.getDeps)
+// need to build out endpoint to take the answer array as a body element
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
