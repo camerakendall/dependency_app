@@ -85,13 +85,8 @@ const ourList = [
 
 ]
 
-<<<<<<< HEAD
-module.exports = ourList;
-
-=======
 // export default ourList;
 module.exports = ourList;
->>>>>>> 3e08162e7af370e8a792af79a371ae97afdfaf30
 
 
 

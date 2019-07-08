@@ -23,12 +23,14 @@ if(process.env.NODE_ENV === 'production') {
 
 //! Header error with this code
 app.get('/', (req, res, databaseSeed) =>{
-   databaseSeed.seedDB()
+   seeder.seedDB()
   .then(function (res) {
     
     res.sendFile(path.join(__dirname, '../index.html'))
+  }
+  )})
 
-app.get('/', (req, res) =>{
+app.get('/', function (req, res) {
   seeder.seedDB();
   res.sendFile(path.join(__dirname, '../index.html'))
 })
