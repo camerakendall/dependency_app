@@ -3,18 +3,15 @@
   height:30px;
   border: rgba(0,0,0,0.8) solid 2px;
   margin-left: 64%;
-  /* margin-top: 50px; */
   animation: slidein 0.2s linear ;
   margin-top:20px;
   padding-top:10px;
-  padding-left:10px;
+  text-align: center;
   font-family: helvetica;
   color: rgba(0,0,0,0.8);
   cursor:pointer;
-  /* background-color: rgba(0,0,0,0.8); */
 }
 .fa-arrow-right{
-  /* margin-top: 50px; */
   margin-top:20px;
   font-size: 30pt;
   padding-left: 15px;
@@ -31,15 +28,8 @@
   bottom:0;
   left:0;  
   height: 100px;
-  /* background-color: whitesmoke;  */
   width:100vw;
-  /* border-top:solid rgba(0,0,0,0.7) 1pt; */
-  /* animation: slideup 0.2s  ; */
-  /* animation-timing-function: linear; */
   will-change: transform;
-  /* transition:0.3s linear; */
- 
-	/* transition: transform 300ms linear; */
 }
 
 .hide-footer{
