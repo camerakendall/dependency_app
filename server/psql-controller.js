@@ -32,13 +32,13 @@ const controller = {
         //   client -> server -> controller -> db
         // console.log("list of tech", listOfTech)
         //strinigify and replace double quotes and [ ] appropriately for SQL syntax
-        console.log("listof tech???", listOfTech)
+
         const queryTech = (listOfTech).replace(/["\[\]]/g, (matched) => {
             if (matched === '"') {return "'"} 
             if (matched === '[') {return "("} 
             if (matched === ']') {return ")"} 
         }); 
-        console.log("query tech", queryTech)
+
         const fullQuery = `SELECT * FROM dependency WHERE technology IN ${queryTech};`; //DON'T FORGET THIS MOFO ;
         pool.query(fullQuery, (err, results) => {
             if (err) {
@@ -47,7 +47,7 @@ const controller = {
             }
             else {
                 // seeder.dropDB();
-                console.log(results.rows)
+                console.log(results.rows, 'this is result.rows')
                 res.status(200).send(results.rows) //returns an array of results
             }
         })
