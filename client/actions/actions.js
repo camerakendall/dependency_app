@@ -24,9 +24,9 @@ export const fetchData = () => {
             method: 'GET',
             mode: 'no-cors',
             cache: 'default',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // },
             // body: JSON.stringify(fakeData),
         })
             .then(response => response.json())
