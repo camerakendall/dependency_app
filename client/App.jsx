@@ -1,6 +1,5 @@
 import React from 'react';
 import Wrapper from './containers/MainContainer.jsx';
-import './styles/App.css';
 import { connect } from 'react-redux';
 import ResultsPage from './components/ResultsPage.jsx';
 import * as actions from './actions/actions';
