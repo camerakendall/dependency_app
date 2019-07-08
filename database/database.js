@@ -6,10 +6,7 @@ const pool = new Pool({ //this creates a pool
     // user: 'database-user',
     max: 9, //maximum number of clients the pool should contain (default is set to 10)
     idleTimeoutMillis: 30000, //number of milliseconds a client must sit idle in the pool and not be checked out before it is disconnected from the backend and discarded
-    connectionTimeoutMillis: 10000, //number of milliseconds to wait before timing out when connecting a new client (default is 0 which means never)
-    user: 'camera',
-    database: 'camera',
-
+    connectionTimeoutMillis: 10000 //number of milliseconds to wait before timing out when connecting a new client (default is 0 which means never)
 });
 
 
