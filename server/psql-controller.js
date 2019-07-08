@@ -10,6 +10,7 @@
 //
 //---------------------------------------------------------------------------------------------------
 const pool = require('../database/database.js'); //requires our database (which is exported as pool)
+const seeder = require('../database/seed.js');
 
 const controller = {
     // currently only has one functionality for now, but for modularity's sake we will
@@ -41,6 +42,7 @@ const controller = {
                 res.status(400).send("Sorry, error querying for your dependencies!")
             }
             else {
+                // seeder.dropDB();
                 res.status(200).send(results.rows) //returns an array of results
             }
         })

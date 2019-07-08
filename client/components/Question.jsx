@@ -53,11 +53,11 @@ const Question = ({
             <Quest>{question}</Quest>
             <Options>
                 <Option>
-                    <Label for="Yes">Yes</Label>
+                    <Label htmlFor="Yes">Yes</Label>
                     <input type='radio' name='radio' id='Yes'/>
                 </Option>
                 <Option>
-                    <Label for="No">No</Label>
+                    <Label htmlFor="No">No</Label>
                     <input type='radio' name='radio' id='No'/>
                 </Option>
             </Options>
