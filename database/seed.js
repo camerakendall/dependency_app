@@ -29,11 +29,11 @@ function createDB(){
     }
   })
 }
-async function seedDB(){
+function seedDB(){
   // const dropped = await dropDB();
   // console.log(dropped)
-  const exists = await pool.query('SELECT EXISTS(SELECT * FROM dependency)');
-  console.log("dependency exists: ", exists.rows[0].exists)
+  // const exists = await pool.query('SELECT EXISTS(SELECT * FROM dependency)');
+  // console.log("dependency exists: ", exists.rows[0].exists)
   createDB()
   let insertQuery= 'INSERT INTO dependency VALUES '
   // BUILD THE QUERY STRING ⛏
@@ -47,7 +47,7 @@ async function seedDB(){
   const { technology, dependencies, docs, notes } = listItem;
   //3) Now we can concatenate the values (of the Keys we've just extracted) with our query string to make... 
   // insertQuery += `(DEFAULT, '${technology}', '[${dependencies}]', '[${docs}]', '[${notes}]'), ` 
-  insertQuery += `(DEFAULT, '${technology}', '{"hey"}'), ` 
+  insertQuery += `(DEFAULT, '${technology}', '{"hey", "bro"}'), ` 
   // A BIG ASS RAW SQL QUERY STRING called 'insertQuery'
   // -----------------------------------------
   //But now that we've finished concatenating, instead of a comma we want to end our SQL query with a semicolon.

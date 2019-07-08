@@ -25,18 +25,18 @@ if(process.env.NODE_ENV === 'production') {
 app.get('/', (req, res, databaseSeed) =>{
    databaseSeed.seedDB()
   .then(function (res) {
-    
     res.sendFile(path.join(__dirname, '../index.html'))
+  });
 
 app.get('/', (req, res) =>{
-  seeder.seedDB();
+  seeder.seedDB()
   res.sendFile(path.join(__dirname, '../index.html'))
-})
+});
 
 
 //Need this for querying after hitting submit button.
 // app.get('/result' , controller.getDeps)
-app.get('/result' , controller.getDeps)
+app.get('/result' , controller.getDeps);
 // need to build out endpoint to take the answer array as a body element
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
