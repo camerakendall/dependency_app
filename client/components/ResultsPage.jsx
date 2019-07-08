@@ -41,7 +41,7 @@ class ResultsPage extends React.Component {
         if (docs) {
           console.log("yes there are docs")
           docs.forEach(doc => {
-            allDocs.push(<li>{doc}</li>);
+            allDocs.push(<li><a href={doc} >{doc}</a></li>);
           })
         }
         if (notes) {
@@ -58,10 +58,10 @@ class ResultsPage extends React.Component {
 
     return (
       <main className="results-page">
-        Your Results:
+       
         <section className="command-container">
           <h2>Your install command</h2>
-          <h4>Run <code>npm init</code>, then run this command in your terminal from your application's root directory.</h4>
+          <h4>Run npm init, then run this command in your terminal from your application's root directory.</h4>
           <div className="code-container">
             <p className="install">{installLine}</p>
           </div>
