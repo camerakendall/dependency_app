@@ -55,4 +55,4 @@ function seedDB(){
 }
  
 
-module.exports = { createDB, seedDB }
+module.exports = seedDB 

@@ -7,6 +7,8 @@ const port = 3000
 const pg = require('pg');
 const databaseSeed = require('../database/seed.js')
 
+
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -21,16 +23,33 @@ app.use((req, res, next) => {
 //for when in build
 app.use('/build', express.static(path.join(__dirname, '../build')))
 
+// if(process.env.NODE_ENV === 'production'){}
 
+//! Unhandled promise rejection error with this code
+// app.get('/', (req, res) =>
+
+// res.sendFile(path.join(__dirname, '../index.html'))
+// )
+
+//! Header error with this code
 app.get('/', (req, res, databaseSeed) =>{
-  
-res.sendFile(path.join(__dirname, '../index.html'))
-  
-})
+   databaseSeed.seedDB()
+  .then(function (res) {
+    
+    res.sendFile(path.join(__dirname, '../index.html'))
+
+  })
+  .catch(function (err) {
+    if (err) {
+      res.sendStatus(500)
+    }
+  })
+  })
+
 
 //Need this for querying after hitting submit button.
 // app.get('/result' , controller.getDeps)
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
-//module.exports = server;
+module.exports = app;
