@@ -3,9 +3,11 @@ const app = express(); //call express "app"
 const path = require('path'); //use path for correct directions
 const bodyParser = require('body-parser');
 const controller = require('./psql-controller.js');
+const seeder = require('../database/seed.js');
+
 const port = 3000
 const pg = require('pg');
-const databaseSeed = require('../database/seed.js')
+
 
 
 
@@ -15,27 +17,9 @@ app.use((req, res, next) => {
   next();
 })
 
-//need /build
-//need get request for / route on 3000
-//process variables (if production get /build. if development )
-//if(process.env.NODE_ENV === 'production') { }
-
-//for when in build
-app.use('/build', express.static(path.join(__dirname, '../build')))
-
-// if(process.env.NODE_ENV === 'production'){}
-
-//! Unhandled promise rejection error with this code
-// app.get('/', (req, res) =>
-
-// res.sendFile(path.join(__dirname, '../index.html'))
-// )
-// app.get('/', (req, res) =>{
-
-// app.get('/', (req, res) =>{
-//  // res.send('hello')
-//    res.sendFile(path.join(__dirname, '../index.html'))
-// })
+if(process.env.NODE_ENV === 'production') {
+  app.use('/build', express.static(path.join(__dirname, '../build')))
+}
 
 //! Header error with this code
 app.get('/', (req, res, databaseSeed) =>{
@@ -44,13 +28,10 @@ app.get('/', (req, res, databaseSeed) =>{
     
     res.sendFile(path.join(__dirname, '../index.html'))
 
-  })
-  .catch(function (err) {
-    if (err) {
-      res.sendStatus(500)
-    }
-  })
-  })
+app.get('/', (req, res) =>{
+  seeder.seedDB();
+  res.sendFile(path.join(__dirname, '../index.html'))
+})
 
 
 //Need this for querying after hitting submit button.
@@ -59,5 +40,3 @@ app.get('/result' , controller.getDeps)
 // need to build out endpoint to take the answer array as a body element
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
-module.exports = app;
