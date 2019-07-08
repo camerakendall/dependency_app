@@ -29,8 +29,8 @@ const QuestionsDisplay = props => (
     <Main className="questionField">
         {
             props.index < props.questions.length &&
-            <Question 
-                question = {props.questions[props.index]}
+            <Question
+                question={props.questions[props.index]}
                 key={props.index}
                 index={props.index}
             />

@@ -56,5 +56,7 @@ const MainContainer = (props) => (
         <Footer />
     </React.Fragment>
 );
+//need the submit button at the bottom of container - render conditionally
+// if index is at the last question, render submit button instead
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);

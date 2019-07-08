@@ -16,6 +16,8 @@ import App from './App.jsx';
 import store from './store';
 import styled, { createGlobalStyle } from 'styled-components'
 
+
+
 const Reset = createGlobalStyle`
   * {
     margin: 0;

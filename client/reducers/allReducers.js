@@ -5,6 +5,9 @@ import * as types from '../constants/actionTypes';
 // import ourQuestions from '../ourQuestions.js';// 
 
 const initialState = {
+    // to be used in redux to determine if the fetch is actually going out
+    isFetching: false,
+    codeToDisplay: null,
     isItTimeForResults:false,
     index: 0,
     questions: [
@@ -24,9 +27,9 @@ const initialState = {
         "Are you going to use Redux for your React state management?",
         "Last question! Do you wish to bundle your app with Webpack?",
         "... All Done! Click the sumbit button below to obtain your dependecies.",
-      ],
+    ],
     answers: [
-         'Webpack', 'Node', 'Express', 'Nodemon', 'Request', 'Body-Parser', 'node-postgres', 'Mongo', 'Mongoose', 'Babel', 'React', 'CSS', 'Redux',
+        'Webpack', 'Node', 'Express', 'Nodemon', 'Request', 'Body-Parser', 'node-postgres', 'Mongo', 'Mongoose', 'Babel', 'React', 'CSS', 'Redux',
     ]
 }
 
@@ -37,13 +40,25 @@ const allReducers = (state = initialState, action) => {
     // state = Object.assign({}, state);
     switch (action.type) {
         case types.NEXT_BUTTON: //return something 
-            console.log(state.index);
-            if(index <= questions.length-2){
+            if (index <= questions.length - 2) {
                 index = index + 1
             }
             return {
                 ...state,
                 index
+            }
+        // case types.REQUEST_DATA:
+        //     return Object.assign({}, state, {
+        //         isFetching: true,
+        //     })
+        case types.RECEIVE_DATA:
+            let stateClone = { ...state };
+            console.log(data, 'this is data before action payload')
+            data = action.payload.data;
+            console.log(data, 'this is the action payload')
+            stateClone.codeToDisplay = data;
+            return {
+                stateClone,
             }
         case types.SUBMIT_BUTTON: //return something
             isItTimeForResults = true
@@ -52,6 +67,7 @@ const allReducers = (state = initialState, action) => {
                 ...state,
                 isItTimeForResults
             }
+
         default:
             return state;
     }
