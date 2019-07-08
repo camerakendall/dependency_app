@@ -21,13 +21,6 @@ if(process.env.NODE_ENV === 'production') {
   app.use('/build', express.static(path.join(__dirname, '../build')))
 }
 
-//! Header error with this code
-app.get('/', (req, res, databaseSeed) =>{
-   seeder.seedDB()
-  .then(function (res) {
-    res.sendFile(path.join(__dirname, '../index.html'))
-  }
-  )})
 
 app.get('/', function (req, res) {
   seeder.seedDB();
