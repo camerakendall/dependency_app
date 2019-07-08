@@ -16,6 +16,34 @@ class ResultsPage extends React.Component {
 
 
   render() {
+    if (this.props.codeToDisplay) {
+      console.log(this.props.codeToDisplay)
+      const allInfo = this.props.codeToDisplay;
+      // console.log(allInfo, Array.isArray(allInfo))
+      // allInfo.forEach(function (elem) {
+      //   console.log(elem)
+      // })
+      const installLine = "npm install ";
+      const docs = [];
+      const notes = [];
+      console.log(allInfo)
+      allInfo.forEach(elem => {
+        elem.dependencies.forEach(dep => {
+          installLine += dep;
+        })
+        elem.docs.forEach(doc => {
+          docs.push(doc);
+        })
+        elem.notes.forEach(note => {
+          notes.push(note);
+        })
+      })
+
+      console.log(installLine)
+      console.log(docs)
+      console.log(notes)
+    }
+
     return (
       <main className="results-page">
         Your Results:
