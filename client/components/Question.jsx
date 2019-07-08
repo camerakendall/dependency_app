@@ -9,6 +9,7 @@ const Gradient = keyframes`
     background-position: 100% 50%
 }
 `
+
 const QuestionWrapper = styled.div`
 display: flex;
 flex-flow: column wrap;
