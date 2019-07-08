@@ -70,10 +70,6 @@ async function seedDB(){
 }
  
 
-<<<<<<< HEAD
-module.exports = seedDB 
-=======
 module.exports= {
   seedDB, dropDB
 }
->>>>>>> 3e08162e7af370e8a792af79a371ae97afdfaf30
