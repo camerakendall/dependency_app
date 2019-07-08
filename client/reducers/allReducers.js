@@ -13,8 +13,7 @@ const initialState = {
     questions: ourQuestions,
     answers: [
         'Webpack', 'Node', 'Express', 'Nodemon', 'Request', 'Body-Parser', 'node-postgres', 'Mongo', 'Mongoose', 'Babel', 'React', 'CSS', 'Redux',
-    ],
-    answers2: []
+    ]
 }
 
 const allReducers = (state = initialState, action) => {

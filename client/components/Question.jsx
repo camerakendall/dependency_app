@@ -1,21 +1,20 @@
 import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import '../styles/Question.css'
 const Gradient = keyframes`
 0%, 100% {
-    background-position: 0% 50%
+    background-position: 0% 50%;
 }
 50% {
-    background-position: 100% 50%
+    background-position: 100% 50%;
 }
 `
-
 const QuestionWrapper = styled.div`
 display: flex;
 flex-flow: column wrap;
 justify-content: center;
 align-items: center;
-height: 300px;
+height: 350px;
 width: 600px;
 background-size: 400% 400%;
 background: linear-gradient(45deg, darkblue, blue, teal, turquoise);
