@@ -69,7 +69,7 @@ function seedDB(){
   //-----------------------------------------    
   })
   insertQuery = `${insertQuery.slice(0, insertQuery.length - 2)};`;
-  console.log(insertQuery)
+  console.log("insertQuery", insertQuery)
 
   //--------------------------------------------------------------------------------------------------
   //FINALLY we insert our data by using our Big ass raw sql query
