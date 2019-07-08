@@ -18,19 +18,23 @@ export const receiveData = (data) => ({
     payload: data
 });
 
-export const fetchData = () => {
+export const fetchData = (param) => {
     return ((dispatch) => {
-        fetch("/result", {
+        fetch(`/result?query=${param}`, {
             method: 'GET',
             mode: 'no-cors',
             cache: 'default',
+            // query: ''
             // headers: {
             //     'Content-Type': 'application/json'
             // },
             // body: JSON.stringify(fakeData),
         })
             .then(response => response.json())
-            .then(data => dispatch(receiveData(data)),
+            .then(data => {
+                console.log("DATA", data)
+                dispatch(receiveData(data))
+            },
                 // error => console.log(error, 'This is error')
             )
     })

@@ -36,13 +36,13 @@ const allReducers = (state = initialState, action) => {
         //     })
         case types.RECEIVE_DATA:
             let stateClone = { ...state };
-            console.log(data, 'this is data before action payload')
-            data = action.payload.data;
-            console.log(data, 'this is the action payload')
+            // console.log("here", action.payload)
+            const data = action.payload;
+            // console.log(data, 'this is data before action payload')
+            // console.log(data, 'this is the action payload')
             stateClone.codeToDisplay = data;
-            return {
-                stateClone,
-            }
+            // console.log(JSON.stringify(stateClone))
+            return stateClone
         case types.SUBMIT_BUTTON: //return something
             isItTimeForResults = true
             return {
