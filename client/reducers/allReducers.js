@@ -5,7 +5,7 @@ import * as types from '../constants/actionTypes';
 
 const initialState = {
     index: 0,
-    questions: ['a', 'b', 'c', 'd'],
+    questions: ['Are you using wepack?', 'b', 'c', 'd'],
     answers: [
          'Webpack', 'Node', 'Express', 'Nodemon', 'Request', 'Body-Parser', 'node-postgres', 'Mongo', 'Mongoose', 'Babel', 'React', 'CSS', 'Redux',
     ]
