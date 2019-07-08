@@ -8,3 +8,6 @@ import * as types from '../constants/actionTypes';
 export const nextButton = () => ({
     type: types.NEXT_BUTTON,
 })
+export const submitButton = () => ({
+    type: types.SUBMIT_BUTTON,
+})
