@@ -1,14 +1,40 @@
-// main App wrapper
-
 import React from 'react';
 import Wrapper from './containers/MainContainer.jsx';
+import './styles/App.css';
+import { connect } from 'react-redux';
+import ResultsPage from './components/ResultsPage.jsx';
+import * as actions from './actions/actions';
+import { bindActionCreators } from 'redux';
+import styled from 'styled-components';
 
-const App = () => {
+
+const mapStateToProps = ({ applicationState }) => ({
+  questions: applicationState.questions,
+  answers: applicationState.answers,
+  index: applicationState.index,
+  isItTimeForResults: applicationState.isItTimeForResults
+});
+
+const Header = styled.h1`
+text-align: center;
+color: darkblue;
+font-size: 50px;
+font-family: helvetica;
+fontweight:300;
+`
+const NPM = styled.img`
+display: block;
+text-align: center;
+`
+
+const App = (props) => {
     return(
         <div id='App'>
-            <Wrapper />
+            <Header>Dependency Generator</Header> <br/>
+            {/* <NPM height="40px" src= "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1200px-Npm-logo.svg.png"/> */}
+            {props.isItTimeForResults ? <ResultsPage /> : <Wrapper />}
         </div>
     )
 }
 
-export default App;
+export default connect(mapStateToProps, null)(App);

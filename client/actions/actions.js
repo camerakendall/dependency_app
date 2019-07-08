@@ -9,12 +9,33 @@ export const nextButton = () => ({
     type: types.NEXT_BUTTON,
 });
 
-export const requestData = () => ({
-    type: types.REQUEST_DATA,
+// export const requestData = () => ({
+//     type: types.REQUEST_DATA,
+// });
+
+export const receiveData = (data) => ({
+    type: types.RECEIVE_DATA,
+    payload: data
 });
 
-export const receiveData = (json) => ({
-    type: types.RECEIVE_DATA,
-    // codeToDisplay: unsure how the call handles the data
-    receivedAt: Date.now(),
+export const fetchData = () => {
+    return ((dispatch) => {
+        fetch("/result", {
+            method: 'GET',
+            mode: 'no-cors',
+            cache: 'default',
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // },
+            // body: JSON.stringify(fakeData),
+        })
+            .then(response => response.json())
+            .then(data => dispatch(receiveData(data)),
+                // error => console.log(error, 'This is error')
+            )
+    })
+}
+
+export const submitButton = () => ({
+    type: types.SUBMIT_BUTTON,
 })
