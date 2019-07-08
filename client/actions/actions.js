@@ -9,25 +9,29 @@ export const nextButton = () => ({
     type: types.NEXT_BUTTON,
 });
 
-export const requestData = () => ({
-    type: types.REQUEST_DATA,
-});
+// export const requestData = () => ({
+//     type: types.REQUEST_DATA,
+// });
 
 export const receiveData = (data) => ({
     type: types.RECEIVE_DATA,
-    data
+    payload: data
 });
 
-export const fetchData = (url = '/result', data = []) => {
-    return fetch(url, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: data,
+export const fetchData = () => {
+    return ((dispatch) => {
+        fetch("/result", {
+            method: 'GET',
+            mode: 'no-cors',
+            cache: 'default',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // body: JSON.stringify(fakeData),
+        })
+            .then(response => response.json())
+            .then(data => dispatch(receiveData(data)),
+                // error => console.log(error, 'This is error')
+            )
     })
-        .then(
-            response => {dispatchEvent(receiveData(response.data))},
-            // error => console.log(error, 'This is error')
-        )
-  }
+}

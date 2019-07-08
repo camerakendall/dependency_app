@@ -41,10 +41,8 @@ const MainContainer = (props) => (
             <QuestionsDisplay />
             <button id='button' onClick={() => { props.nextButton() }}>Next</button>
         </div>
-        {/* could create a new component here at Submit that would handle the fetch call in vanilla react
-        would need to fetch from the '/result' endpoint and pass in our answers array either as params or request body
-            whew! */}
-        <button>Submit</button>
+        
+        <button onClick={() => { props.fetchData()} }>Submit</button>
     </div>
 );
 //need the submit button at the bottom of container - render conditionally

@@ -50,9 +50,14 @@ const allReducers = (state = initialState, action) => {
                 isFetching: true,
             })
         case types.RECEIVE_DATA:
-            Object.assign({}, ...state, {
-                codeToDisplay: action.data,
-            })
+            let stateClone = { ...state };
+            console.log(data, 'this is data before action payload')
+            data = action.payload.data;
+            console.log(data, 'this is the action payload')
+            stateClone.codeToDisplay = data;
+            return {
+                stateClone,
+            }
 
         default:
             return state;

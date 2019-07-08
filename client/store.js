@@ -14,11 +14,10 @@ import { fetchData } from './actions/actions.js';
 
 const store = createStore(
   reducers,
-  composeWithDevTools(applyMiddleware(thunk)),
+  applyMiddleware(thunk),
 );
 
 // TBD with what our actions/reducers/stateful components will be called
-// store.dispatch(loadMarkets());
-store.dispatch(fetchData())
+// store.dispatch(fetchData())
 
 export default store;
