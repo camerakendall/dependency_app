@@ -1,4 +1,4 @@
-export const ourQuestions = [
+const ourQuestions = [
   "Will you be using a Mac Operating system?",
   "Are you going to be building a Full-Stack application?",
   "Awesome! Will you be using Node.js for your Backend?",
@@ -17,4 +17,4 @@ export const ourQuestions = [
   "... All Done! Click the sumbit button below to obtain your dependecies.",
 ];
 
- 
+export default ourQuestions;

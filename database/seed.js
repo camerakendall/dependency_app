@@ -11,7 +11,7 @@ const list = require('./ourList.js');
 // -----------------------------------------
 function dropDB(){
   pool.query('DROP TABLE dependency;', (err) => {
-    console.log('Database dropped')
+    console.log('Table dependency dropped')
   })
 }
 function createDB(){
@@ -24,44 +24,52 @@ function createDB(){
     if (err) {
       return console.error('Error', err.stack)
     }else{
-      console.log(result)
+      console.log("made table")
+      // console.log(result)
     }
   })
 }
 function seedDB(){
-  dropDB()
+  // const dropped = await dropDB();
+  // console.log(dropped)
+  // const exists = await pool.query('SELECT EXISTS(SELECT * FROM dependency)');
+  // console.log("dependency exists: ", exists.rows[0].exists)
   createDB()
-  let insertQuery= 'INSERT INTO dependency VALUES'
+  let insertQuery= 'INSERT INTO dependency VALUES '
   // BUILD THE QUERY STRING ⛏
   // ⛏the variable insertQuery will initially be 'INSERT INTO dependency VALUES'
   // ⛏then little by little(on each iteration) we will add to this string
 
   //1) ITERATE OVER SEED DATA 🏃🏃🏃🏃🏃🏃
+  // console.log("list", list)
   list.forEach((listItem) => {
   //2) 🏃for each item in our seed array, extract the keys.(Using Destructuring)🏃
   const { technology, dependencies, docs, notes } = listItem;
   //3) Now we can concatenate the values (of the Keys we've just extracted) with our query string to make... 
-  insertQuery += `(DEFAULT, '${technology}','${dependencies}', '${docs}','${notes}','),` 
+  // insertQuery += `(DEFAULT, '${technology}', '[${dependencies}]', '[${docs}]', '[${notes}]'), ` 
+  insertQuery += `(DEFAULT, '${technology}', '{"hey", "bro"}'), ` 
   // A BIG ASS RAW SQL QUERY STRING called 'insertQuery'
   // -----------------------------------------
   //But now that we've finished concatenating, instead of a comma we want to end our SQL query with a semicolon.
   //-----------------------------------------    
   })
-  insertQuery = `${insertQuery.slice(0, insertQuery.length - 1)};`;
+  insertQuery = `${insertQuery.slice(0, insertQuery.length - 2)};`;
+  console.log(insertQuery)
+
   //--------------------------------------------------------------------------------------------------
   //FINALLY we insert our data by using our Big ass raw sql query
   pool.query(insertQuery, (err,result)=> {
     if(err){
-      return console.error('Error', err.stack)
+      return console.error('Error populating db', err.stack)
     }
     else{
         console.log(result)
-        console.log('Dependency information inserted');
+        console.log("'Dependency information inserted'");
     }
   })
 }
  
 
 module.exports= {
-  seedDB
+  seedDB, dropDB
 }
