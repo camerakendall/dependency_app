@@ -38,7 +38,7 @@ const ourList = [
     {
         technology: 'Body-Parser',
         dependencies: ['body-parser'],
-        docs: ['https://www.npmjs.com/package/request'],
+        docs: ['https://www.npmjs.com/package/body-parser'],
         notes: ['Needed for post requests']
     },
     {
@@ -64,7 +64,7 @@ const ourList = [
 
         dependencies: ['@babel/core', 'babel-loader', '@babel/preset-env'],
 
-        docs: ['https://www.npmjs.com/package/@babel/core, https://github.com/babel/babel-loader, https://www.npmjs.com/package/@babel/preset-env'],
+        docs: ['https://www.npmjs.com/package/@babel/core', 'https://github.com/babel/babel-loader', 'https://www.npmjs.com/package/@babel/preset-env'],
         notes: ['']
     },
     {
@@ -72,7 +72,7 @@ const ourList = [
 
         dependencies: ['@babel/preset-react', 'react', 'prop-types'],
 
-        docs: ['https://www.npmjs.com/package/@babel/preset-react, https://www.npmjs.com/package/react, https://www.npmjs.com/package/prop-types'],
+        docs: ['https://www.npmjs.com/package/@babel/preset-react', 'https://www.npmjs.com/package/react', 'https://www.npmjs.com/package/prop-types'],
         notes: ['']
     },
     {
@@ -80,14 +80,14 @@ const ourList = [
 
         dependencies: ['style-loader', 'css-loader'],
 
-        docs: ['https://www.npmjs.com/package/style-loader, https://github.com/webpack-contrib/css-loader'],
+        docs: ['https://www.npmjs.com/package/style-loader', 'https://github.com/webpack-contrib/css-loader'],
         notes: ['']
     },
     {
         technology: 'Redux',
 
         dependencies: ['react-redux', 'react-dom', 'redux', 'redux-devtools-extension', 'redux-thunk'],
-        docs: ['https://www.npmjs.com/package/react-redux, https://www.npmjs.com/package/react-dom, https://www.npmjs.com/package/redux, https://www.npmjs.com/package/redux-devtools-extension, https://www.npmjs.com/package/redux-thunk'],
+        docs: ['https://www.npmjs.com/package/react-redux', 'https://www.npmjs.com/package/react-dom', 'https://www.npmjs.com/package/redux', 'https://www.npmjs.com/package/redux-devtools-extension', 'https://www.npmjs.com/package/redux-thunk'],
         notes: ['']
     },
 
