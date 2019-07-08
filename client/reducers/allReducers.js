@@ -5,6 +5,10 @@ import * as types from '../constants/actionTypes';
 import ourQuestions from '../ourQuestions.js';
 
 const initialState = {
+    // to be used in redux to determine if the fetch is actually going out
+    isFetching: false,
+    codeToDisplay: null,
+    isItTimeForResults:false,
     index: 0,
     questions: ourQuestions,
     answers: [
@@ -15,22 +19,38 @@ const initialState = {
 const allReducers = (state = initialState, action) => {
     let questions = state.questions.slice()
     let index = state.index
+    let isItTimeForResults = state.isItTimeForResults
     // state = Object.assign({}, state);
     switch (action.type) {
         case types.NEXT_BUTTON: //return something 
-            console.log(state.index);
-            if(index <= questions.length-2){
+            if (index <= questions.length - 2) {
                 index = index + 1
             }
             return {
                 ...state,
                 index
             }
-        case types.SUBMIT_BUTTON: //return something
+        // case types.REQUEST_DATA:
+        //     return Object.assign({}, state, {
+        //         isFetching: true,
+        //     })
+        case types.RECEIVE_DATA:
+            let stateClone = { ...state };
+            console.log(data, 'this is data before action payload')
+            data = action.payload.data;
+            console.log(data, 'this is the action payload')
+            stateClone.codeToDisplay = data;
             return {
-
-
+                stateClone,
             }
+        case types.SUBMIT_BUTTON: //return something
+            isItTimeForResults = true
+            console.log('true')
+            return {
+                ...state,
+                isItTimeForResults
+            }
+
         default:
             return state;
     }

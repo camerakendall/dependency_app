@@ -15,22 +15,22 @@ display: flex;
 flex-flow: column wrap;
 justify-content: center;
 align-items: center;
-height: 600px;
+height: 300px;
 width: 600px;
-background: linear-gradient(45deg, darkblue, blue, teal, turquoise);
 background-size: 400% 400%;
+background: linear-gradient(45deg, darkblue, blue, teal, turquoise);
 animation: ${Gradient} 10s linear infinite;
 `
 const Quest = styled.h1`
 text-align: center;
-font-size: 50px;
+font-size: 40px;
 padding: 10px;
-color: lightcyan;
-margin-top: -15%;
-margin-bottom: 10%;
+color: whitesmoke;
+font-family:helvetica;
+font-weight: 300;
 `
 const Options = styled.div`
-display: flexbox;
+display: flex;
 justify-content: center;
 `
 const Option = styled.div`
@@ -40,7 +40,8 @@ text-align: center;
 `
 const Label = styled.label`
 display: block;
-color: white;
+color: rgba(0,0,0,0.8);
+font-family:helvetica;
 font-size: 30px;
 `
 

@@ -25,5 +25,6 @@ app.get('/', (req, res) =>{
 
 
 app.get('/result' , controller.getDeps)
+// need to build out endpoint to take the answer array as a body element
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
