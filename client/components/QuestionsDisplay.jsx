@@ -25,15 +25,8 @@ const mapStateToProps = ({ applicationState }) => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-<<<<<<< HEAD
-
-const QuestionsDisplay = props => (
-    <div className="questionField">
-        <h2> Display Questions </h2>
-=======
 const QuestionsDisplay = props => (
     <Main className="questionField">
->>>>>>> 12156834ab604bd2b6f11b607a304c77d8a086f2
         {
             props.index < props.questions.length &&
             <Question

@@ -13,8 +13,21 @@ export const requestData = () => ({
     type: types.REQUEST_DATA,
 });
 
-export const receiveData = (json) => ({
+export const receiveData = (data) => ({
     type: types.RECEIVE_DATA,
-    // codeToDisplay: unsure how the call handles the data
-    receivedAt: Date.now(),
-})
+    data
+});
+
+export const fetchData = (url = '/result', data = []) => {
+    return fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: data,
+    })
+        .then(
+            response => {dispatchEvent(receiveData(response.data))},
+            // error => console.log(error, 'This is error')
+        )
+  }

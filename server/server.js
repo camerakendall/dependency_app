@@ -26,19 +26,13 @@ app.use('/build', express.static(path.join(__dirname, '../build')))
 app.get('/', (req, res) =>{
  // res.send('hello')
    res.sendFile(path.join(__dirname, '../index.html'))
-  
 })
 
 
 
 
-<<<<<<< HEAD
 app.get('/result' , controller.getDeps)
 // need to build out endpoint to take the answer array as a body element
-=======
-
-app.get('/result' , controller.getDeps)
->>>>>>> 12156834ab604bd2b6f11b607a304c77d8a086f2
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 

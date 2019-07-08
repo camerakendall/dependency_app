@@ -38,7 +38,6 @@ const MainContainer = (props) => (
     <div className="container">
         <div id='questionsDisplay'>
             <h1>{props.questions}</h1>
-            <h1>TEXT</h1>
             <QuestionsDisplay />
             <button id='button' onClick={() => { props.nextButton() }}>Next</button>
         </div>

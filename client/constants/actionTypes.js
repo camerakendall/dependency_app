@@ -5,3 +5,4 @@ export const NEXT_BUTTON = 'NEXT_BUTTON';
 // export const SUBMIT_BUTTON = 'SUBMIT_BUTTON';
 export const REQUEST_DATA = 'REQUEST_DATA';
 export const RECEIVE_DATA = 'RECEIVE_DATA';
+export const FETCH_DATA = 'FETCH_DATA';

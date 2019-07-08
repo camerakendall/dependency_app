@@ -26,27 +26,21 @@ const initialState = {
         "Are you going to use Redux for your React state management?",
         "Last question! Do you wish to bundle your app with Webpack?",
         "... All Done! Click the sumbit button below to obtain your dependecies.",
-      ],
+    ],
     answers: [
-         'Webpack', 'Node', 'Express', 'Nodemon', 'Request', 'Body-Parser', 'node-postgres', 'Mongo', 'Mongoose', 'Babel', 'React', 'CSS', 'Redux',
+        'Webpack', 'Node', 'Express', 'Nodemon', 'Request', 'Body-Parser', 'node-postgres', 'Mongo', 'Mongoose', 'Babel', 'React', 'CSS', 'Redux',
     ]
 }
 
 const allReducers = (state = initialState, action) => {
     let questions = state.questions.slice()
-<<<<<<< HEAD
-    switch (action.type) {
-        case types.NEXT_BUTTON: //return something 
-=======
     let index = state.index
     // state = Object.assign({}, state);
     switch (action.type) {
         case types.NEXT_BUTTON: //return something 
-            console.log(state.index);
-            if(index <= questions.length-2){
+            if (index <= questions.length - 2) {
                 index = index + 1
             }
->>>>>>> 12156834ab604bd2b6f11b607a304c77d8a086f2
             return {
                 ...state,
                 index
@@ -55,7 +49,11 @@ const allReducers = (state = initialState, action) => {
             return Object.assign({}, state, {
                 isFetching: true,
             })
-        
+        case types.RECEIVE_DATA:
+            Object.assign({}, ...state, {
+                codeToDisplay: action.data,
+            })
+
         default:
             return state;
     }
