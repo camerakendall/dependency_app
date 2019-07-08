@@ -14,12 +14,8 @@ const pool = require('../database/database.js'); //requires our database (which 
 const controller = {
     // currently only has one functionality for now, but for modularity's sake we will
     // create our obj and refer to the singular function as a method
-
     // getDeps method takes req for list of dependencies
-
-    //////////////////////////////////req body vs params
-
-    // reads req.STUFF (which will be an array of strings containing the answers from the questionnaire)
+    // reads req.body (which will be an array of strings containing the answers from the questionnaire)
     // creates the appropriate query string
     // queries db (which is our Pool)
     // makes one singular query so we use Pool.query instead of Pool.connect's client.query
