@@ -7,8 +7,21 @@ const pool = new Pool({ //this creates a pool
     max: 9, //maximum number of clients the pool should contain (default is set to 10)
     idleTimeoutMillis: 30000, //number of milliseconds a client must sit idle in the pool and not be checked out before it is disconnected from the backend and discarded
     connectionTimeoutMillis: 10000, //number of milliseconds to wait before timing out when connecting a new client (default is 0 which means never)
+    password: 'M0M00428?'
 });
 
+const { pool } = require('pg');
+
+/**
+ * db setup
+ * $ sudo su -
+ * $ su - postgres
+ * $ psql
+ * > CREATE USER dev WITH SUPERUSER CREATEDB CREATEROLE PASSWORD 'momo';
+ * > CREATE DATABASE wine_db_v2 WITH OWNER dev
+ */
+
+// const connectionString = 'postgresql://dev:momo@localhost:5432/scratchdb';
 
 //NEEDS TO BE UPDATED ACCORDING TO US
 //Acquires a client from the pool. If the pool is 'full' and all clients are currently checked out, this will wait in a FIFO queue until a client becomes available

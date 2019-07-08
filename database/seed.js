@@ -75,15 +75,15 @@ function seedDB(){
 
   //--------------------------------------------------------------------------------------------------
   //FINALLY we insert our data by using our Big ass raw sql query
-  pool.query(insertQuery, (err,result)=> {
-    if(err){
-      return console.error('Error populating db', err.stack)
-    }
-    else{
-        console.log(result)
-        console.log("'Dependency information inserted'");
-    }
-  })
+  // pool.query(insertQuery, (err,result)=> {
+  //   if(err){
+  //     return console.error('Error populating db', err.stack)
+  //   }
+  //   else{
+  //       console.log(result)
+  //       console.log("'Dependency information inserted'");
+  //   }
+  // })
 }
  
 
