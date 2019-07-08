@@ -3,12 +3,17 @@ const list = require('./ourList.js');
 // --------------------------------------
 // Schema ✉
 // --------------------------------------
-// _id SERIALKEY 
+// _id SERIALKEY  // DEFAULT
 //  technology VARCHAR //string
 //  dependencies text [] //text array
 //  docs text [] //text array
-//  notes text [] // text arr
+//  notes text [] // text array
 // -----------------------------------------
+function dropDB(){
+  pool.query('DROP TABLE dependency;', (err) => {
+    console.log('Database dropped')
+  })
+}
 function createDB(){
 // -----------------------------------------
 // CREATE THE DATABASE IF IT DOES NOT ALREADY EXIST ⛑
@@ -24,6 +29,7 @@ function createDB(){
   })
 }
 function seedDB(){
+  dropDB()
   createDB()
   let insertQuery= 'INSERT INTO dependency VALUES'
   // BUILD THE QUERY STRING ⛏
@@ -34,15 +40,16 @@ function seedDB(){
   list.forEach((listItem) => {
   //2) 🏃for each item in our seed array, extract the keys.(Using Destructuring)🏃
   const { technology, dependencies, docs, notes } = listItem;
-  //3) Now we can concatenate the values of the Keys we've just extracted with our query string to make... 
+  //3) Now we can concatenate the values (of the Keys we've just extracted) with our query string to make... 
   insertQuery += `(DEFAULT, '${technology}','${dependencies}', '${docs}','${notes}','),` 
-  // A BIG 🍑 ASS RAW SQL QUERY STRING called 'insertQuery'
+  // A BIG ASS RAW SQL QUERY STRING called 'insertQuery'
   // -----------------------------------------
-  //But now that we've finished concatenating, instead of a comma we want toend our SQL query with a semicolon.
+  //But now that we've finished concatenating, instead of a comma we want to end our SQL query with a semicolon.
   //-----------------------------------------    
   })
   insertQuery = `${insertQuery.slice(0, insertQuery.length - 1)};`;
   //--------------------------------------------------------------------------------------------------
+  //FINALLY we insert our data by using our Big ass raw sql query
   pool.query(insertQuery, (err,result)=> {
     if(err){
       return console.error('Error', err.stack)
