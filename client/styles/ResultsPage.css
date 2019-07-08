@@ -9,7 +9,7 @@
   font-family: Helvetica, sans-serif;
   margin: 20px 10px 0px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-content: center;
 }
 .code-container{
@@ -20,6 +20,7 @@
 }
 .allStuff{
   text-align: left;
+  max-width: 45%;
 }
 h4{
   font-weight: 300;
@@ -44,4 +45,8 @@ h2{
   100%{
     opacity:1;
   }
+}
+a, a:visited{
+  text-decoration: none;
+  color: midnightblue;
 }

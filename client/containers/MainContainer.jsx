@@ -33,6 +33,7 @@ border: rgba(0,0,0,0.8) solid 2px;
 background-color: rgba(0,0,0,0);
 cursor:pointer;
 padding-bottom:10px;
+outline: none;
 `
 
 const mapStateToProps = ({ applicationState }) => ({

@@ -10,18 +10,4 @@ const pool = new Pool({ //this creates a pool
 });
 
 
-//NEEDS TO BE UPDATED ACCORDING TO US
-//Acquires a client from the pool. If the pool is 'full' and all clients are currently checked out, this will wait in a FIFO queue until a client becomes available
-//
-// pool.connect().then(client => {
-//     return client.query('SELECT * FROM users WHERE id = $1', [1]) //TO BE CHANGED, RIGHT NOW, this is saying select all from db where id =1
-//         .then(res => {
-//             client.release()
-//         })
-//         .catch(err => {
-//             client.release(); //points to the releaseCallback when finished with client, important - without this, further calls will timeout
-//             console.log(err.stack)
-//         })
-// })
-
 module.exports = pool;
