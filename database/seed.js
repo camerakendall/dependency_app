@@ -38,7 +38,7 @@ function arrConverter(dbArr){
     str += `"${element}",`
   })
   str = str.slice(0, str.length - 1) + '}'
-  console.log(str, 'this is str')
+  // console.log(str, 'this is str')
     return(str)
 }
 //-------------------------------------------------------------
