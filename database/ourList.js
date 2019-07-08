@@ -67,7 +67,7 @@ const ourList = [
     },
     {
         technology: 'React',
-        dependencies: ['@babel/preset-react, react,prop-types'],
+        dependencies: ['@babel/preset-react', 'react,prop-types'],
         docs: ['https://www.npmjs.com/package/@babel/preset-react, https://www.npmjs.com/package/react, https://www.npmjs.com/package/prop-types'],
         notes: ['']
     },
