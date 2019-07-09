@@ -29,6 +29,7 @@ const QuestionsDisplay = props => (
         {
             props.index < props.questions.length &&
             <Question
+                questions={props.questions}
                 question={props.questions[props.index]}
                 key={props.index}
                 index={props.index}

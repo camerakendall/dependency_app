@@ -15,16 +15,16 @@ const seeder = require('../database/seed.js');
 const controller = {
     // currently only has one functionality for now, but for modularity's sake we will
     // create our obj and refer to the singular function as a method
+
     // getDeps method takes req for list of dependencies
-    // reads req.body (which will be an array of strings containing the answers from the questionnaire)
+    // reads req.query (which will be an array of strings containing the answers from the questionnaire)
     // creates the appropriate query string
     // queries db (which is our Pool)
     // makes one singular query so we use Pool.query instead of Pool.connect's client.query
     // useful link for understanding queries ----> https://node-postgres.com/features/queries
     getDeps: (req, res) => {
-        // console.log("req query????", req.query.query)
         const {query} = req.query
-        //We know that the req.body will always be safe because we control how what goes into it
+        //We know that the req.query will always be safe because we control how what goes into it
         const listOfTech = query; //ex ["mongo", "mongoose", etc...]
         // ^ should always have length >= 1
         //   even if questions are not mandatory (in order not to overwhelm user if they're not sure about something)
@@ -33,6 +33,7 @@ const controller = {
         // console.log("list of tech", listOfTech)
         //strinigify and replace double quotes and [ ] appropriately for SQL syntax
 
+        // ["elem", "elem", "elem"] ===TO SQL==> ('elem', 'elem', 'elem') 
         const queryTech = (listOfTech).replace(/["\[\]]/g, (matched) => {
             if (matched === '"') {return "'"} 
             if (matched === '[') {return "("} 

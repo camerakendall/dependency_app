@@ -3,7 +3,7 @@ const list = require('./ourList.js');
 // --------------------------------------
 // Schema ✉
 // --------------------------------------
-// _id SERIALKEY  // DEFAULT
+//  _id SERIALKEY  // DEFAULT
 //  technology VARCHAR //string
 //  dependencies text [] //text array
 //  docs text [] //text array
@@ -14,9 +14,11 @@ function dropDB(){
     console.log('Table dependency dropped')
   })
 }
+
 function createDB(){
 // -----------------------------------------
-// CREATE THE DATABASE IF IT DOES NOT ALREADY EXIST ⛑
+// MUST CREATEDB LOCALLY FIRST
+// CREATE THE TABLE IF IT DOES NOT ALREADY EXIST ⛑
 // -----------------------------------------
   const createDepend = `CREATE TABLE IF NOT EXISTS dependency ("_id" SERIAL PRIMARY KEY,"technology" VARCHAR,"dependencies" TEXT [],"docs" TEXT [],"notes" TEXT []);`
  
@@ -25,29 +27,22 @@ function createDB(){
       return console.error('Error', err.stack)
     }else{
       console.log("made table")
-      // console.log(result)
     }
   })
 }
-//-------------------------------------------------------------
 
+//-------------------------------------------------------------
 function arrConverter(dbArr){
   let str ='{';
   dbArr.forEach((element)=>{
-    // console.log(`"${element}"`, 'this is element')
     str += `"${element}",`
   })
   str = str.slice(0, str.length - 1) + '}'
-  // console.log(str, 'this is str')
-    return(str)
+    return(str) // ["elem", "elem", "elem"] ===TO SQL==> {"elem", "elem", "elem"}
 }
 //-------------------------------------------------------------
 
 function seedDB(){
-  // const dropped = await dropDB();
-  // console.log(dropped)
-  // const exists = await pool.query('SELECT EXISTS(SELECT * FROM dependency)');
-  // console.log("dependency exists: ", exists.rows[0].exists)
   createDB()
   let insertQuery= 'INSERT INTO dependency VALUES '
   // BUILD THE QUERY STRING ⛏
@@ -55,7 +50,6 @@ function seedDB(){
   // ⛏then little by little(on each iteration) we will add to this string
 
   //1) ITERATE OVER SEED DATA 🏃🏃🏃🏃🏃🏃
-  // console.log("list", list)
   list.forEach((listItem) => {
   //2) 🏃for each item in our seed array, extract the keys.(Using Destructuring)🏃
   const { technology, dependencies, docs, notes } = listItem;
@@ -86,7 +80,6 @@ function seedDB(){
   })
 }
  
-
 module.exports= {
   seedDB, dropDB
 }

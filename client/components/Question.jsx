@@ -48,10 +48,8 @@ font-size: 30px;
 const Question = ({
     index,
     question
-
 }) => (
         <QuestionWrapper idx={index}>
-        
             <Quest>{question}</Quest>
             { index < 15 ?
             <Options>
@@ -64,7 +62,7 @@ const Question = ({
                     <input type='radio' name='radio' id='No'/>
                 </Option> 
             </Options>
-            : <div></div>}
+            : <React.Fragment/>}
         </QuestionWrapper>
     )
 

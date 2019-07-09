@@ -4,18 +4,14 @@ import '../styles/Footer.css';
 import * as actions from '../actions/actions';
 import { bindActionCreators } from 'redux';
 
-
-
 const mapStateToProps = ({ applicationState }) => ({
   questions: applicationState.questions,
   answers: applicationState.answers,
   index: applicationState.index
-
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
- 
 class Footer extends React.Component{
   constructor(){
     super()

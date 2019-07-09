@@ -8,9 +8,6 @@ const seeder = require('../database/seed.js');
 const port = 3000
 const pg = require('pg');
 
-
-
-
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -21,16 +18,11 @@ if(process.env.NODE_ENV === 'production') {
   app.use('/build', express.static(path.join(__dirname, '../build')))
 }
 
-
 app.get('/', function (req, res) {
   seeder.seedDB();
   res.sendFile(path.join(__dirname, '../index.html'))
 });
 
-
-//Need this for querying after hitting submit button.
-// app.get('/result' , controller.getDeps)
 app.get('/result' , controller.getDeps);
-// need to build out endpoint to take the answer array as a body element
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
