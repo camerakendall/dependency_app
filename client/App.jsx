@@ -2,10 +2,7 @@ import React from 'react';
 import Wrapper from './containers/MainContainer.jsx';
 import { connect } from 'react-redux';
 import ResultsPage from './components/ResultsPage.jsx';
-import * as actions from './actions/actions';
-import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
-
 
 const mapStateToProps = ({ applicationState }) => ({
   questions: applicationState.questions,
